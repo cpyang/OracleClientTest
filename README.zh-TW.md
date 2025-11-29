@@ -39,6 +39,38 @@
 ### 評測與其他設定
 您也可以在此檔案中自訂評測參數、連線池設定和長時間連線測試的變數。
 
+### 連線池設定
+以下參數用於控制 ODP.NET 連線池的行為。應用程式的預設值設定在 `appsettings.json` 中，可能與驅動程式的預設值不同。
+
+-   **`Enabled` (`Pooling`)**: 啟用或停用連線池。
+    -   應用程式預設值: `true`
+    -   驅動程式預設值: `true`
+-   **`MinPoolSize` (`Min Pool Size`)**: 連線池中的最小連線數。
+    -   應用程式預設值: `100`
+    -   驅動程式預設值: `1`
+-   **`MaxPoolSize` (`Max Pool Size`)**: 連線池中允許的最大連線數。
+    -   應用程式預設值: `100`
+    -   驅動程式預設值: `100`
+-   **`IncrPoolSize` (`Incr Pool Size`)**: 當連線池中的所有連線都在使用中時，要建立的新連線數。
+    -   應用程式預設值: `1`
+    -   驅動程式預設值: `5`
+-   **`DecrPoolSize` (`Decr Pool Size`)**: 當過多的已建立連線未使用時，要關閉的連線數。
+    -   應用程式預設值: `1`
+    -   驅動程式預設值: `1`
+-   **`ConnectionTimeout` (`Connection Timeout`)**: 在發生逾時錯誤之前，等待來自連線池的閒置連線的時間（以秒為單位）。
+    -   應用程式預設值: `15`
+    -   驅動程式預設值: `15`
+-   **`ValidateConnection` (`Validate Connection`)**: 啟用來自連線池的連線驗證。
+    -   應用程式預設值: `false`
+    -   驅動程式預設值: `false`
+-   **`PromotableTransaction`**: 指定可提升為分散式交易的交易類型。此屬性不是標準 ODP.NET 連線字串的一部分，但由本應用程式使用。
+    -   應用程式預設值: `"promotable"`
+-   **`Enlist`**: 指定連線是否將登記在執行緒目前的交易內容中。
+    -   應用程式預設值: `true`
+    -   驅動程式預設值: `true`
+
+更多詳細資訊，請參閱官方 [Oracle Data Provider for .NET 開發人員指南](https://docs.oracle.com/en/database/oracle/oracle-data-access-components/19.3/odpnt/featConnecting.html#GUID-BCF2F215-C25F-403C-8D18-B03A69BC7104)。
+
 ## 如何執行
 
 1.  **切換至專案目錄**：
