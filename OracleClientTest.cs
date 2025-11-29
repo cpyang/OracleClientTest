@@ -654,12 +654,12 @@ namespace OracleClientTest
                                     }
                                 }
 
-                                int waitMinutes = random.Next(1, 11);
-                                Console.WriteLine($"[Thread {threadId}] Round {round}: Waiting for {waitMinutes} minutes...");
+                                int waitSeconds = random.Next(1, 11);
+                                Console.WriteLine($"[Thread {threadId}] Round {round}: Waiting for {waitSeconds} seconds...");
 
                                 try
                                 {
-                                    Task.Delay(TimeSpan.FromMinutes(waitMinutes), cancellationToken).Wait();
+                                    Task.Delay(TimeSpan.FromSeconds(waitSeconds), cancellationToken).Wait();
                                 }
                                 catch (OperationCanceledException)
                                 {
