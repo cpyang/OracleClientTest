@@ -43,7 +43,7 @@ You can also customize benchmark parameters, pooling settings, and long connecti
 
 1.  **Navigate to the project directory**:
     ```bash
-    cd /home/cpyang/src/ODP.Net/OracleClientTest
+    cd OracleClientTest
     ```
 2.  **Restore NuGet packages** (if not already restored):
     ```bash
